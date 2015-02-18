@@ -1,0 +1,10 @@
+[
+  {
+    "name": "nodeCgFollow",
+    "title": "Followers",
+    "width": 2,
+    "file": "panel.html",
+    "faIcon": "fa-user-plus",
+    "viewUrl": "/view/nodecg-follow/index.html"
+  }
+]
