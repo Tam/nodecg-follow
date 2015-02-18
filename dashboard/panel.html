@@ -1,1 +1,50 @@
-<i class="fa fa-cog"></i>
+<button class="btn btn-link ncg-f_settings-link" data-toggle="modal" data-target="#ncg-f_settingsModal" title="Followers Settings"><i class="fa fa-cog"></i></button>
+
+<div class="modal fade" id="ncg-f_settingsModal" tabindex="-1" role="dialog" aria-labelledby="ncg-f_settingsModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cancel</span></button>
+				<h4 class="modal-title" id="ncg-f_settingsModalLabel">Followers Settings</h4>
+			</div>
+			<div class="modal-body">
+				<form id="ncg-f_settingsForm">
+					<div class="form-group">
+						<label for="ncg-f_channelName">Channel Name</label>
+						<input type="text" class="form-control" id="ncg-f_channelName" name="ncg-f_channelName" />
+					</div>
+
+					<div class="ncg-f_addFile" id="ncg-f_backgroundImage">
+						<label for="ncg-f_backgroundImageFileLocation">Background Image</label>
+						<div class="uploadingOverlay hidden">Uploading...</div>
+						<div class="form-group ncg-f_fileUpload">
+							<input type="file" class="form-control" placeholder="background.png" id="ncg-f_backgroundImageFileLocation" accept="image/*"/>
+							<button class="btn btn-xs btn-success ncg-f_uploadFile" title="Upload File"><i class="fa fa-plus"></i></button>
+						</div>
+						<div class="form-group hidden ncg-t_fileUploaded">
+							<input type="text" readonly class="form-control" placeholder="background.png" name="backgroundImageFileLocation" id="ncg-t_backgroundImageFileLocationSet"/>
+							<button class="btn btn-xs btn-danger ncg-t_removeFile" title="Remove File"><i class="fa fa-minus"></i></button>
+						</div>
+					</div>
+
+					<div class="ncg-f_addFile" id="ncg-f_notificationSound">
+						<label for="ncg-f_backgroundImageFileLocation">Notification Sound</label>
+						<div class="uploadingOverlay hidden">Uploading...</div>
+						<div class="form-group ncg-f_fileUpload">
+							<input type="file" class="form-control" placeholder="background.png" id="ncg-f_notificationSoundFileLocation" accept="image/*"/>
+							<button class="btn btn-xs btn-success ncg-f_uploadFile" title="Upload File"><i class="fa fa-plus"></i></button>
+						</div>
+						<div class="form-group hidden ncg-t_fileUploaded">
+							<input type="text" readonly class="form-control" placeholder="background.png" name="backgroundImageFileLocation" id="ncg-t_notificationSoundFileLocationSet"/>
+							<button class="btn btn-xs btn-danger ncg-t_removeFile" title="Remove File"><i class="fa fa-minus"></i></button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
+				<input type="button" class="btn btn-primary btn-sm" id="ncg-f_settingsModalButton" value="Save Settings"/>
+			</div>
+		</div>
+	</div>
+</div>

@@ -4,7 +4,7 @@
     "title": "Followers",
     "width": 2,
     "file": "panel.html",
-    "faIcon": "fa-user-plus",
+    "faIcon": "fa-users",
     "viewUrl": "/view/nodecg-follow/index.html"
   }
 ]
