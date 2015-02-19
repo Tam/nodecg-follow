@@ -1,6 +1,6 @@
 {
   "name": "nodecg-follow",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "nodecgDependency": "^0.4.8",
   "description": "A Twitch Follow notifier",
   "homepage": "https://github.com/Tamfoolery/nodecg-follow",

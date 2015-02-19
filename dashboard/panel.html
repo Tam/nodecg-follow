@@ -1,4 +1,13 @@
-<button class="btn btn-link ncg-f_settings-link" data-toggle="modal" data-target="#ncg-f_settingsModal" title="Followers Settings"><i class="fa fa-cog"></i></button>
+<div class="ncg-f_panel">
+	<!-- TODO: Find a better place for the settings button -->
+	<button class="btn btn-link ncg-f_settings-link" data-toggle="modal" data-target="#ncg-f_settingsModal" title="Followers Settings"><i class="fa fa-cog"></i></button>
+
+	<ul class="ncg-f_followList well" id="ncg-f_followList">
+		<!-- Populated by magic... -->
+	</ul>
+	<p></p>
+	<small>Total New Followers: <strong id="ncg-f_totalNewFollowers"></strong></small>
+</div>
 
 <div class="modal fade" id="ncg-f_settingsModal" tabindex="-1" role="dialog" aria-labelledby="ncg-f_settingsModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
@@ -175,7 +184,7 @@
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="form-group">
 							<label for="ncg-f_css">Custom CSS</label>
 							<textarea name="ncg-f_css" id="ncg-f_css" cols="30" rows="10">
