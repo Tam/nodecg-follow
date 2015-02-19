@@ -1,3 +1,8 @@
+/**
+ * Settings
+ */
+$('.nodecg-follow .panel-heading').append('<button class="btn btn-info btn-xs ncg-f_panel-btn" data-toggle="modal" data-target="#ncg-f_settingsModal" title="Followers Settings"><i class="fa fa-cog"></i></button>');
+
 // Advanced settings CSS
 var ncg_f_cssEditor = ace.edit("ncg-f_css");
 ncg_f_cssEditor.getSession().setMode("ace/mode/css");
@@ -8,7 +13,7 @@ ncg_f_cssEditor.setOptions({
 /**
  * Followers
  */
-var ncg_f_channel = 'imaqtpie',
+var ncg_f_channel = 'amazhs',
 	ncg_f_timer = false,
 	ncg_f_followPanelList = $('#ncg-f_followList'),
 	ncg_f_followers = {},
@@ -64,7 +69,7 @@ function ncg_f_newFollower(user) {
 	}
 
 	ncg_f_followersCount++;
-	$('#ncg-f_totalNewFollowers').html(ncg_f_followersCount);
+	$('#ncg-f_totalNewFollowers').html(ncg_f_followersCount + ((ncg_f_followersCount === 69) ? ' <small>hehe</small>' : ''));
 
 	ncg_f_followPanelList.prepend('<li><span>' + user + '</span></li>');
 
