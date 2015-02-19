@@ -9,6 +9,6 @@ A Twitch Follow notifier for [NodeCG](https://github.com/nodecg/nodecg)
 ### Issues / Bugs / Enhancements
 If you find a bug, have an issue, or have an idea for an enhancement or improvement [open an issue](https://github.com/Tamfoolery/nodecg-follow/issues).
 
-**If shit is completely fucked (technical term) poke [@Tamfoolery](https://twitter.com/home?status=Hey%20%40Tamfoolery,%20NodeCG%20Transition%20shit's%20fucked%20yo.)**
+**If shit is completely fucked (technical term) poke [@Tamfoolery](https://twitter.com/home?status=Hey%20%40Tamfoolery,%20NodeCG%20Follow%20shit's%20fucked%20yo.)**
 
 [![Donate](http://i.imgur.com/2W9K1Cj.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SRB6ZLSHWLTYJ)

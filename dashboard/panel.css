@@ -34,3 +34,84 @@
 	height: 35px;
 	line-height: 26px;
 }
+
+.ncg-f_screenPosition {
+	position: relative;
+}
+
+.ncg-f_screenPosition .screen {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	list-style: none;
+}
+
+.ncg-f_screenPosition .screen li {
+	margin: 0;
+	padding: 0;
+	width: 33.3333%;
+	float: left;
+}
+
+.ncg-f_screenPosition .screen li label {
+	padding: 0;
+	margin: 0;
+	display: block;
+}
+
+.ncg-f_screenPosition .screen li label span {
+	position: relative;
+	z-index: 0;
+	display: block;
+	padding: 7% 0;
+	margin: 0 -1px -1px 0;
+	border: 1px solid #cccccc;
+	text-align: center;
+
+	cursor: pointer;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	-webkit-transition: all ease-in-out .15s;
+	-o-transition: all ease-in-out .15s;
+	transition: all ease-in-out .15s;
+}
+
+.ncg-f_screenPosition .screen li:nth-child(3n) label span {
+	margin-right: 0;
+}
+
+.ncg-f_screenPosition .screen li:nth-last-child(-n+3) label span {
+	margin-bottom: 0;
+}
+
+.ncg-f_screenPosition .screen li label:hover span {
+	background: rgba(0, 0, 0, .05);
+}
+
+.ncg-f_screenPosition .screen li label input {
+	display: none;
+}
+
+.ncg-f_screenPosition .screen li label input:checked + span {
+	z-index: 1;
+	background: #43ac6a;
+	border-color: #3c9a5f;
+	color: #ffffff;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+#ncg-f_advancedSettings {
+	margin-top: 20px;
+}
+
+#ncg-f_advancedSettings hr {
+	margin-top: 0;
+}
