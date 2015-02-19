@@ -13,7 +13,7 @@ ncg_f_cssEditor.setOptions({
 /**
  * Followers
  */
-var ncg_f_channel = 'amazhs',
+var ncg_f_channel = 'giantwaffle',
 	ncg_f_timer = false,
 	ncg_f_followPanelList = $('#ncg-f_followList'),
 	ncg_f_followers = {},
@@ -60,13 +60,7 @@ function ncg_f_getFollowers(all, offset) {
 }
 
 function ncg_f_newFollower(user) {
-	if (ncg_f_timer) {
-		setTimeout(function () {
-			newFollower(user);
-		}, 1000);
-
-		return;
-	}
+	nodecg.sendMessage('newFollower', user);
 
 	ncg_f_followersCount++;
 	$('#ncg-f_totalNewFollowers').html(ncg_f_followersCount + ((ncg_f_followersCount === 69) ? ' <small>hehe</small>' : ''));
@@ -83,5 +77,5 @@ function ncg_f_newFollower(user) {
 
 $(document).ready(function () {
 	ncg_f_getFollowers();
-	setInterval(ncg_f_getFollowers, 1000);
+	setInterval(ncg_f_getFollowers, 5000);
 });

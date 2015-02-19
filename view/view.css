@@ -1,4 +1,43 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900);
+
 * {
 	margin: 0;
 	padding: 0;
+}
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+#ncg-f_notification {
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	width: 580px;
+	height: 150px;
+	background: url("imgs/notification_bg.png") center center no-repeat;
+
+	opacity: 0;
+
+	transition: all 0.5s ease-in-out;
+}
+
+#ncg-f_notification.show {
+	opacity: 1;
+}
+
+#ncg-f_followerName {
+	position: absolute;
+	top: 55px;
+	right: 20px;
+	bottom: 20px;
+	left: 20px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+
+	font-size: 3em;
+	font-weight: bold;
+	color: #ffffff;
 }
