@@ -158,6 +158,10 @@
 	z-index: 0;
 }
 
+.ncg-f_followList.no-user:before {
+	content: 'Username not set';
+}
+
 .ncg-f_followList li {
 	position: relative;
 	margin-bottom: -1px;

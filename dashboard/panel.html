@@ -46,19 +46,19 @@
 						</div>
 					</div>
 
-					<div class="ncg-f_screenPosition">
+					<div class="ncg-f_screenPosition" id="ncg-f_screenPosition">
 						<div class="form-group">
 							<label>Screen Position</label>
 							<ul class="screen">
-								<li><label><input name="screenPosition" type="radio" value="tl" checked /><span>Top Left</span></label></li>
-								<li><label><input name="screenPosition" type="radio" value="tc" /><span>Top Center</span></label></li>
-								<li><label><input name="screenPosition" type="radio" value="tr" /><span>Top Right</span></label></li>
-								<li><label><input name="screenPosition" type="radio" value="cl" /><span>Center Left</span></label></li>
-								<li><label><input name="screenPosition" type="radio" value="cc" /><span>Center</span></label></li>
-								<li><label><input name="screenPosition" type="radio" value="cr" /><span>Center Right</span></label></li>
-								<li><label><input name="screenPosition" type="radio" value="bl" /><span>Bottom Left</span></label></li>
-								<li><label><input name="screenPosition" type="radio" value="bc" /><span>Bottom Center</span></label></li>
-								<li><label><input name="screenPosition" type="radio" value="br" /><span>Bottom Right</span></label></li>
+								<li><label><input name="screenPosition" type="radio" value="topLeft" checked /><span>Top Left</span></label></li>
+								<li><label><input name="screenPosition" type="radio" value="topCenter" /><span>Top Center</span></label></li>
+								<li><label><input name="screenPosition" type="radio" value="topRight" /><span>Top Right</span></label></li>
+								<li><label><input name="screenPosition" type="radio" value="centerLeft" /><span>Center Left</span></label></li>
+								<li><label><input name="screenPosition" type="radio" value="center" /><span>Center</span></label></li>
+								<li><label><input name="screenPosition" type="radio" value="centerRight" /><span>Center Right</span></label></li>
+								<li><label><input name="screenPosition" type="radio" value="bottomLeft" /><span>Bottom Left</span></label></li>
+								<li><label><input name="screenPosition" type="radio" value="bottomCenter" /><span>Bottom Center</span></label></li>
+								<li><label><input name="screenPosition" type="radio" value="bottomRight" /><span>Bottom Right</span></label></li>
 							</ul>
 						</div>
 					</div>
@@ -101,39 +101,39 @@
 									<label for="ncg-f_animInEasing">Animation In Easing</label>
 									<select class="form-control" name="ncg-f_animInEasing" id="ncg-f_animInEasing">
 										<optgroup label="Defaults">
-											<option value="0.250, 0.250, 0.750, 0.750">Linear</option>
-											<option value="0.250, 0.100, 0.250, 1.000" selected>Ease</option>
-											<option value="0.420, 0.000, 1.000, 1.000">Ease In</option>
-											<option value="0.000, 0.000, 0.580, 1.000">Ease Out</option>
-											<option value="0.420, 0.000, 0.580, 1.000">Ease In Out</option>
+											<option value="linear">Linear</option>
+											<option value="ease" selected>Ease</option>
+											<option value="easeIn">Ease In</option>
+											<option value="easeOut">Ease Out</option>
+											<option value="easeInOut">Ease In Out</option>
 										</optgroup>
 										<optgroup label="Penner Equations (approximated)">
-											<option value="0.550, 0.085, 0.680, 0.530">Ease In Quad</option>
-											<option value="0.550, 0.055, 0.675, 0.190">Ease In Cubic</option>
-											<option value="0.895, 0.030, 0.685, 0.220">Ease In Quart</option>
-											<option value="0.755, 0.050, 0.855, 0.060">Ease In Quint</option>
-											<option value="0.470, 0.000, 0.745, 0.715">Ease In Sine</option>
-											<option value="0.950, 0.050, 0.795, 0.035">Ease In Expo</option>
-											<option value="0.600, 0.040, 0.980, 0.335">Ease In Circ</option>
-											<option value="0.600, -0.280, 0.735, 0.045">Ease In Back</option>
+											<option value="easeInQuad">Ease In Quad</option>
+											<option value="easeInCubic">Ease In Cubic</option>
+											<option value="easeInQuart">Ease In Quart</option>
+											<option value="easeInQuint">Ease In Quint</option>
+											<option value="easeInSine">Ease In Sine</option>
+											<option value="easeInExpo">Ease In Expo</option>
+											<option value="easeInCirc">Ease In Circ</option>
+											<option value="easeInBack">Ease In Back</option>
 
-											<option value="0.250, 0.460, 0.450, 0.940">Ease Out Quad</option>
-											<option value="0.215, 0.610, 0.355, 1.000">Ease Out Cubic</option>
-											<option value="0.165, 0.840, 0.440, 1.000">Ease Out Quart</option>
-											<option value="0.230, 1.000, 0.320, 1.000">Ease Out Quint</option>
-											<option value="0.390, 0.575, 0.565, 1.000">Ease Out Sine</option>
-											<option value="0.190, 1.000, 0.220, 1.000">Ease Out Expo</option>
-											<option value="0.075, 0.820, 0.165, 1.000">Ease Out Circ</option>
-											<option value="0.175, 0.885, 0.320, 1.275">Ease Out Back</option>
+											<option value="easeOutQuad">Ease Out Quad</option>
+											<option value="easeOutCubic">Ease Out Cubic</option>
+											<option value="easeOutQuart">Ease Out Quart</option>
+											<option value="easeOutQuint">Ease Out Quint</option>
+											<option value="easeOutSine">Ease Out Sine</option>
+											<option value="easeOutExpo">Ease Out Expo</option>
+											<option value="easeOutCirc">Ease Out Circ</option>
+											<option value="easeOutBack">Ease Out Back</option>
 
-											<option value="0.455, 0.030, 0.515, 0.955">Ease In Out Quad</option>
-											<option value="0.645, 0.045, 0.355, 1.000">Ease In Out Cubic</option>
-											<option value="0.770, 0.000, 0.175, 1.000">Ease In Out Quart</option>
-											<option value="0.860, 0.000, 0.070, 1.000">Ease In Out Quint</option>
-											<option value="0.445, 0.050, 0.550, 0.950">Ease In Out Sine</option>
-											<option value="1.000, 0.000, 0.000, 1.000">Ease In Out Expo</option>
-											<option value="0.785, 0.135, 0.150, 0.860">Ease In Out Circ</option>
-											<option value="0.680, -0.550, 0.265, 1.550">Ease In Out Back</option>
+											<option value="easeInOutQuad">Ease In Out Quad</option>
+											<option value="easeInOutCubic">Ease In Out Cubic</option>
+											<option value="easeInOutQuart">Ease In Out Quart</option>
+											<option value="easeInOutQuint">Ease In Out Quint</option>
+											<option value="easeInOutSine">Ease In Out Sine</option>
+											<option value="easeInOutExpo">Ease In Out Expo</option>
+											<option value="easeInOutCirc">Ease In Out Circ</option>
+											<option value="easeInOutBack">Ease In Out Back</option>
 										</optgroup>
 									</select>
 								</div>
@@ -142,7 +142,7 @@
 								<div class="form-group">
 									<label for="ncg-f_animOutEasing">Animation Out Easing</label>
 									<select class="form-control" name="ncg-f_animOutEasing" id="ncg-f_animOutEasing">
-										<optgroup label="Defaults">
+										<!--<optgroup label="Defaults">
 											<option value="0.250, 0.250, 0.750, 0.750">Linear</option>
 											<option value="0.250, 0.100, 0.250, 1.000" selected>Ease</option>
 											<option value="0.420, 0.000, 1.000, 1.000">Ease In</option>
@@ -176,6 +176,41 @@
 											<option value="1.000, 0.000, 0.000, 1.000">Ease In Out Expo</option>
 											<option value="0.785, 0.135, 0.150, 0.860">Ease In Out Circ</option>
 											<option value="0.680, -0.550, 0.265, 1.550">Ease In Out Back</option>
+										</optgroup>-->
+										<optgroup label="Defaults">
+											<option value="linear">Linear</option>
+											<option value="ease" selected>Ease</option>
+											<option value="easeIn">Ease In</option>
+											<option value="easeOut">Ease Out</option>
+											<option value="easeInOut">Ease In Out</option>
+										</optgroup>
+										<optgroup label="Penner Equations (approximated)">
+											<option value="easeInQuad">Ease In Quad</option>
+											<option value="easeInCubic">Ease In Cubic</option>
+											<option value="easeInQuart">Ease In Quart</option>
+											<option value="easeInQuint">Ease In Quint</option>
+											<option value="easeInSine">Ease In Sine</option>
+											<option value="easeInExpo">Ease In Expo</option>
+											<option value="easeInCirc">Ease In Circ</option>
+											<option value="easeInBack">Ease In Back</option>
+
+											<option value="easeOutQuad">Ease Out Quad</option>
+											<option value="easeOutCubic">Ease Out Cubic</option>
+											<option value="easeOutQuart">Ease Out Quart</option>
+											<option value="easeOutQuint">Ease Out Quint</option>
+											<option value="easeOutSine">Ease Out Sine</option>
+											<option value="easeOutExpo">Ease Out Expo</option>
+											<option value="easeOutCirc">Ease Out Circ</option>
+											<option value="easeOutBack">Ease Out Back</option>
+
+											<option value="easeInOutQuad">Ease In Out Quad</option>
+											<option value="easeInOutCubic">Ease In Out Cubic</option>
+											<option value="easeInOutQuart">Ease In Out Quart</option>
+											<option value="easeInOutQuint">Ease In Out Quint</option>
+											<option value="easeInOutSine">Ease In Out Sine</option>
+											<option value="easeInOutExpo">Ease In Out Expo</option>
+											<option value="easeInOutCirc">Ease In Out Circ</option>
+											<option value="easeInOutBack">Ease In Out Back</option>
 										</optgroup>
 									</select>
 								</div>
@@ -201,7 +236,7 @@
 			<div class="modal-footer">
 				<button type="button" class="btn btn-info btn-sm pull-left" data-target="#ncg-f_advancedSettings" data-toggle="collapse" aria-expanded="false" aria-controls="ncg-f_advancedSettings">Toggle Advanced Settings</button>
 				<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
-				<input type="button" class="btn btn-primary btn-sm" id="ncg-f_settingsModalButton" value="Save Settings"/>
+				<input type="button" class="btn btn-primary btn-sm" id="ncg-f_settingsModalButton" value="Save Settings" />
 			</div>
 		</div>
 	</div>

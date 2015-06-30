@@ -1,0 +1,15 @@
+{
+  "username": "",
+  "backgroundImage": "",
+  "notificationSound": "",
+  "position": "topLeft",
+  "animation": {
+    "in": "fade",
+    "out": "fade"
+  },
+  "easing": {
+    "in": "ease",
+    "out": "ease"
+  },
+  "css": "/*\n* Custom CSS\n* ----------\n* Use CSS to customise the notification\n*\n* Target the notification using #ncg-f_notification\n* The class .show is added when the notification is called\n*/\n"
+}
