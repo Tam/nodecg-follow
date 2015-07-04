@@ -23,26 +23,26 @@
 					<div class="ncg-f_addFile" id="ncg-f_backgroundImage">
 						<label for="ncg-f_backgroundImageFileLocation">Background Image</label>
 						<div class="uploadingOverlay hidden">Uploading...</div>
-						<div class="form-group ncg-f_fileUpload">
+						<div class="form-group ncg-f_fileUpload" id="ncg-f_fileUploadImage">
 							<input type="file" class="form-control" placeholder="background.png" id="ncg-f_backgroundImageFileLocation" accept="image/*"/>
-							<button class="btn btn-xs btn-success ncg-f_uploadFile" title="Upload File"><i class="fa fa-plus"></i></button>
+							<button class="btn btn-xs btn-success ncg-f_uploadFile" id="ncg-f_uploadFileBackground" title="Upload File"><i class="fa fa-plus"></i></button>
 						</div>
-						<div class="form-group hidden ncg-t_fileUploaded">
+						<div class="form-group hidden ncg-t_fileUploaded" id="ncg-t_fileUploadedImage">
 							<input type="text" readonly class="form-control" placeholder="background.png" name="backgroundImageFileLocation" id="ncg-t_backgroundImageFileLocationSet"/>
-							<button class="btn btn-xs btn-danger ncg-t_removeFile" title="Remove File"><i class="fa fa-minus"></i></button>
+							<button class="btn btn-xs btn-danger ncg-t_removeFile" id="ncg-f_removeFileBackground" title="Remove File"><i class="fa fa-minus"></i></button>
 						</div>
 					</div>
 
 					<div class="ncg-f_addFile" id="ncg-f_notificationSound">
 						<label for="ncg-f_backgroundImageFileLocation">Notification Sound</label>
 						<div class="uploadingOverlay hidden">Uploading...</div>
-						<div class="form-group ncg-f_fileUpload">
-							<input type="file" class="form-control" placeholder="background.png" id="ncg-f_notificationSoundFileLocation" accept="audio/mpeg, audio/ogg, audio/wav"/>
-							<button class="btn btn-xs btn-success ncg-f_uploadFile" title="Upload File"><i class="fa fa-plus"></i></button>
+						<div class="form-group ncg-f_fileUpload" id="ncg-f_fileUploadAudio">
+							<input type="file" class="form-control" placeholder="sound.ogg" id="ncg-f_notificationSoundFileLocation" accept="audio/mpeg, audio/ogg, audio/wav"/>
+							<button class="btn btn-xs btn-success ncg-f_uploadFile" id="ncg-f_uploadFileAudio" title="Upload File"><i class="fa fa-plus"></i></button>
 						</div>
-						<div class="form-group hidden ncg-f_fileUploaded">
-							<input type="text" readonly class="form-control" placeholder="background.png" name="backgroundImageFileLocation" id="ncg-t_notificationSoundFileLocationSet"/>
-							<button class="btn btn-xs btn-danger ncg-t_removeFile" title="Remove File"><i class="fa fa-minus"></i></button>
+						<div class="form-group hidden ncg-f_fileUploaded" id="ncg-f_fileUploadedAudio">
+							<input type="text" readonly class="form-control" placeholder="sound.ogg" name="backgroundImageFileLocation" id="ncg-t_notificationSoundFileLocationSet"/>
+							<button class="btn btn-xs btn-danger ncg-t_removeFile" id="ncg-f_removeFileAudio" title="Remove File"><i class="fa fa-minus"></i></button>
 						</div>
 					</div>
 
@@ -66,25 +66,15 @@
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="form-group">
-								<label for="ncg-f_animIn">Animation In</label>
-								<select class="form-control" name="ncg-f_animIn" id="ncg-f_animIn">
+								<label for="ncg-f_anim">Animation</label>
+								<select class="form-control" name="ncg-f_anim" id="ncg-f_anim">
 									<option value="fade">Fade</option>
 									<option value="slideLeft">Slide in Left</option>
 									<option value="slideRight">Slide in Right</option>
 									<option value="slideTop">Slide in Top</option>
 									<option value="slideBottom">Slide in Bottom</option>
-								</select>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="form-group">
-								<label for="ncg-f_animOut">Animation Out</label>
-								<select class="form-control" name="ncg-f_animOut" id="ncg-f_animOut">
-									<option value="fade">Fade</option>
-									<option value="slideLeft">Slide out Left</option>
-									<option value="slideRight">Slide out Right</option>
-									<option value="slideTop">Slide out Top</option>
-									<option value="slideBottom">Slide out Bottom</option>
+									<option value="zoomSmallBig">Zoom (small to big)</option>
+									<option value="zoomBigSmall">Shrink (big to small)</option>
 								</select>
 							</div>
 						</div>
@@ -98,85 +88,8 @@
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
-									<label for="ncg-f_animInEasing">Animation In Easing</label>
-									<select class="form-control" name="ncg-f_animInEasing" id="ncg-f_animInEasing">
-										<optgroup label="Defaults">
-											<option value="linear">Linear</option>
-											<option value="ease" selected>Ease</option>
-											<option value="easeIn">Ease In</option>
-											<option value="easeOut">Ease Out</option>
-											<option value="easeInOut">Ease In Out</option>
-										</optgroup>
-										<optgroup label="Penner Equations (approximated)">
-											<option value="easeInQuad">Ease In Quad</option>
-											<option value="easeInCubic">Ease In Cubic</option>
-											<option value="easeInQuart">Ease In Quart</option>
-											<option value="easeInQuint">Ease In Quint</option>
-											<option value="easeInSine">Ease In Sine</option>
-											<option value="easeInExpo">Ease In Expo</option>
-											<option value="easeInCirc">Ease In Circ</option>
-											<option value="easeInBack">Ease In Back</option>
-
-											<option value="easeOutQuad">Ease Out Quad</option>
-											<option value="easeOutCubic">Ease Out Cubic</option>
-											<option value="easeOutQuart">Ease Out Quart</option>
-											<option value="easeOutQuint">Ease Out Quint</option>
-											<option value="easeOutSine">Ease Out Sine</option>
-											<option value="easeOutExpo">Ease Out Expo</option>
-											<option value="easeOutCirc">Ease Out Circ</option>
-											<option value="easeOutBack">Ease Out Back</option>
-
-											<option value="easeInOutQuad">Ease In Out Quad</option>
-											<option value="easeInOutCubic">Ease In Out Cubic</option>
-											<option value="easeInOutQuart">Ease In Out Quart</option>
-											<option value="easeInOutQuint">Ease In Out Quint</option>
-											<option value="easeInOutSine">Ease In Out Sine</option>
-											<option value="easeInOutExpo">Ease In Out Expo</option>
-											<option value="easeInOutCirc">Ease In Out Circ</option>
-											<option value="easeInOutBack">Ease In Out Back</option>
-										</optgroup>
-									</select>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="form-group">
-									<label for="ncg-f_animOutEasing">Animation Out Easing</label>
-									<select class="form-control" name="ncg-f_animOutEasing" id="ncg-f_animOutEasing">
-										<!--<optgroup label="Defaults">
-											<option value="0.250, 0.250, 0.750, 0.750">Linear</option>
-											<option value="0.250, 0.100, 0.250, 1.000" selected>Ease</option>
-											<option value="0.420, 0.000, 1.000, 1.000">Ease In</option>
-											<option value="0.000, 0.000, 0.580, 1.000">Ease Out</option>
-											<option value="0.420, 0.000, 0.580, 1.000">Ease In Out</option>
-										</optgroup>
-										<optgroup label="Penner Equations (approximated)">
-											<option value="0.550, 0.085, 0.680, 0.530">Ease In Quad</option>
-											<option value="0.550, 0.055, 0.675, 0.190">Ease In Cubic</option>
-											<option value="0.895, 0.030, 0.685, 0.220">Ease In Quart</option>
-											<option value="0.755, 0.050, 0.855, 0.060">Ease In Quint</option>
-											<option value="0.470, 0.000, 0.745, 0.715">Ease In Sine</option>
-											<option value="0.950, 0.050, 0.795, 0.035">Ease In Expo</option>
-											<option value="0.600, 0.040, 0.980, 0.335">Ease In Circ</option>
-											<option value="0.600, -0.280, 0.735, 0.045">Ease In Back</option>
-
-											<option value="0.250, 0.460, 0.450, 0.940">Ease Out Quad</option>
-											<option value="0.215, 0.610, 0.355, 1.000">Ease Out Cubic</option>
-											<option value="0.165, 0.840, 0.440, 1.000">Ease Out Quart</option>
-											<option value="0.230, 1.000, 0.320, 1.000">Ease Out Quint</option>
-											<option value="0.390, 0.575, 0.565, 1.000">Ease Out Sine</option>
-											<option value="0.190, 1.000, 0.220, 1.000">Ease Out Expo</option>
-											<option value="0.075, 0.820, 0.165, 1.000">Ease Out Circ</option>
-											<option value="0.175, 0.885, 0.320, 1.275">Ease Out Back</option>
-
-											<option value="0.455, 0.030, 0.515, 0.955">Ease In Out Quad</option>
-											<option value="0.645, 0.045, 0.355, 1.000">Ease In Out Cubic</option>
-											<option value="0.770, 0.000, 0.175, 1.000">Ease In Out Quart</option>
-											<option value="0.860, 0.000, 0.070, 1.000">Ease In Out Quint</option>
-											<option value="0.445, 0.050, 0.550, 0.950">Ease In Out Sine</option>
-											<option value="1.000, 0.000, 0.000, 1.000">Ease In Out Expo</option>
-											<option value="0.785, 0.135, 0.150, 0.860">Ease In Out Circ</option>
-											<option value="0.680, -0.550, 0.265, 1.550">Ease In Out Back</option>
-										</optgroup>-->
+									<label for="ncg-f_animEasing">Animation Easing</label>
+									<select class="form-control" name="ncg-f_animEasing" id="ncg-f_animEasing">
 										<optgroup label="Defaults">
 											<option value="linear">Linear</option>
 											<option value="ease" selected>Ease</option>

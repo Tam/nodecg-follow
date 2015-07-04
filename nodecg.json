@@ -1,11 +1,11 @@
 {
   "name": "nodecg-follow",
-  "version": "0.0.6",
-  "nodecgDependency": "~0.5.0",
+  "version": "0.1.0",
+  "nodecgDependency": "~0.6.0",
   "description": "A Twitch Follow notifier",
-  "homepage": "https://github.com/Tamfoolery/nodecg-follow",
+  "homepage": "https://github.com/TamMcDonald/nodecg-follow",
   "authors": [
-    "Tamfoolery <tamfoolery@live.co.uk>"
+    "Tam McDonald <tammcdonald@live.co.uk>"
   ],
   "license": "GPL",
   "extension": {

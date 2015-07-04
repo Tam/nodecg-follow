@@ -7,25 +7,18 @@
 
 body {
 	font-family: 'Source Sans Pro', sans-serif;
+	overflow: hidden;
 }
 
 #ncg-f_notification {
 	position: absolute;
-	top: 50px;
-	left: 50px;
 	width: 580px;
 	height: 150px;
 	background: url("imgs/notification_bg.png") center center no-repeat;
 
-	opacity: 0;
-
-	transition: all 0.5s ease-in-out;
+	transition-property: all;
+	transition-duration: 0.5s;
 }
-
-#ncg-f_notification.show {
-	opacity: 1;
-}
-
 #ncg-f_followerName {
 	position: absolute;
 	top: 55px;
@@ -40,4 +33,98 @@ body {
 	font-size: 3em;
 	font-weight: bold;
 	color: #ffffff;
+}
+
+/* Position */
+.top {
+	top: 50px;
+}
+
+.left {
+	left: 50px;
+}
+
+.right {
+	right: 50px;
+}
+
+.bottom {
+	bottom: 50px;
+}
+
+.centerVertical {
+	top: 50%;
+	margin-top: -75px;
+}
+
+.centerHorizontal {
+	left: 50%;
+	margin-left: -290px;
+}
+
+/* Easing */
+/*.linear { transition-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750); }
+.ease { transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000); }
+.easeIn { transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000); }
+.easeOut { transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000); }
+.easeInOut { transition-timing-function: cubic-bezier(0.420, 0.000, 0.580, 1.000); }*/
+.linear { transition-timing-function: linear }
+.ease { transition-timing-function: ease }
+.easeIn { transition-timing-function: ease-in }
+.easeOut { transition-timing-function: ease-out }
+.easeInOut { transition-timing-function: ease-in-out }
+
+.easeInQuad { transition-timing-function: cubic-bezier(0.550, 0.085, 0.680, 0.530) }
+.easeInCubic { transition-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190) }
+.easeInQuart { transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220) }
+.easeInQuint { transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060) }
+.easeInSine { transition-timing-function: cubic-bezier(0.470, 0.000, 0.745, 0.715) }
+.easeInExpo { transition-timing-function: cubic-bezier(0.950, 0.050, 0.795, 0.035) }
+.easeInCirc { transition-timing-function: cubic-bezier(0.600, 0.040, 0.980, 0.335) }
+.easeInBack { transition-timing-function: cubic-bezier(0.600, -0.280, 0.735, 0.045) }
+
+.easeOutQuad { transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940) }
+.easeOutCubic { transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000) }
+.easeOutQuart { transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000) }
+.easeOutQuint { transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000) }
+.easeOutSine { transition-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000) }
+.easeOutExpo { transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000) }
+.easeOutCirc { transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000) }
+.easeOutBack { transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275) }
+
+.easeInOutQuad { transition-timing-function: cubic-bezier(0.455, 0.030, 0.515, 0.955) }
+.easeInOutCubic { transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000) }
+.easeInOutQuart { transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000) }
+.easeInOutQuint { transition-timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000) }
+.easeInOutSine { transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950) }
+.easeInOutExpo { transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000) }
+.easeInOutCirc { transition-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860) }
+.easeInOutBack { transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550) }
+
+/* Animations */
+.fade { opacity: 0 }
+.fade.show { opacity: 1 }
+
+.slideLeft { transform: translateX(-100vw) }
+.slideLeft.show { transform: translateX(0) }
+
+.slideRight { transform: translateX(100vw) }
+.slideRight.show { transform: translateX(0) }
+
+.slideTop { transform: translateY(-100vw) }
+.slideTop.show { transform: translateY(0) }
+
+.slideBottom { transform: translateY(100vw) }
+.slideBottom.show { transform: translateY(0) }
+
+.zoomSmallBig { transform: scale(0) }
+.zoomSmallBig.show { transform: scale(1) }
+
+.zoomBigSmall {
+	opacity: 0;
+	transform: scale(2);
+}
+.zoomBigSmall.show {
+	opacity: 1;
+	transform: scale(1);
 }

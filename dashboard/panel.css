@@ -141,6 +141,9 @@
 	padding: 0;
 	min-height: 40px;
 	background: #ffffff;
+
+	max-height: 236px;
+	overflow: hidden;
 }
 
 .ncg-f_followList:before {

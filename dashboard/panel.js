@@ -6,14 +6,8 @@ function Settings() {
 	this.backgroundImage = '';
 	this.notificationSound = '';
 	this.position = '';
-	this.animation = {
-		in: '',
-		out: ''
-	};
-	this.easing = {
-		in: '',
-		out: ''
-	};
+	this.animation = '';
+	this.easing = '';
 	this.css = '';
 }
 
@@ -42,17 +36,11 @@ function init() {
 			saveButton: $('#ncg-f_settingsModalButton')
 		};
 		settingsFields.username = $('#ncg-f_channelName');
-		settingsFields.backgroundImage = $('#ncg-f_backgroundImageFileLocation');
-		settingsFields.notificationSound = $('#ncg-f_notificationSoundFileLocation');
+		settingsFields.backgroundImage = $('#ncg-t_backgroundImageFileLocationSet');
+		settingsFields.notificationSound = $('#ncg-t_notificationSoundFileLocationSet');
 		settingsFields.position = $('#ncg-f_screenPosition');//.find('input[name=screenPosition]');
-		settingsFields.animation = {
-			in: $('#ncg-f_animIn'),
-			out: $('#ncg-f_animOut')
-		};
-		settingsFields.easing = {
-			in: $('#ncg-f_animInEasing'),
-			out: $('#ncg-f_animOutEasing')
-		};
+		settingsFields.animation = $('#ncg-f_anim');
+		settingsFields.easing = $('#ncg-f_animEasing');
 		settingsFields.css = ace.edit("ncg-f_css");
 		settingsFields.css.getSession().setMode("ace/mode/css");
 		settingsFields.css.setOptions({
@@ -96,17 +84,23 @@ Settings.prototype.update = function () {
 	if (isInit) init();
 
 	settingsFields.username.val(this.username);
-	settingsFields.backgroundImage.val(this.backgroundImage);
-	settingsFields.notificationSound.val(this.notificationSound);
+	if (this.backgroundImage) {
+		settingsFields.backgroundImage.val(this.backgroundImage);
+		$('#ncg-f_fileUploadImage').addClass('hidden');
+		$('#ncg-t_fileUploadedImage').removeClass('hidden');
+	}
+	if (this.notificationSound) {
+		settingsFields.notificationSound.val(this.notificationSound);
+		$('#ncg-f_fileUploadAudio').addClass('hidden');
+		$('#ncg-f_fileUploadedAudio').removeClass('hidden');
+	}
 
 	settingsFields.position.find(':checked').prop('checked', false);
 	settingsFields.position.find('[value=' + this.position + ']').prop('checked', true).trigger("change");
 
-	settingsFields.animation.in.val(this.animation.in);
-	settingsFields.animation.out.val(this.animation.out);
+	settingsFields.animation.val(this.animation);
 
-	settingsFields.easing.in.val(this.easing.in);
-	settingsFields.easing.out.val(this.easing.out);
+	settingsFields.easing.val(this.easing);
 
 	settingsFields.css.setValue(this.css);
 };
@@ -116,26 +110,136 @@ Settings.prototype.save = function () {
 	this.backgroundImage = settingsFields.backgroundImage.val();
 	this.notificationSound = settingsFields.notificationSound.val();
 	this.position = settingsFields.position.find(':checked').val() || 'topLeft';
-	this.animation.in = settingsFields.animation.in.val();
-	this.animation.out = settingsFields.animation.out.val();
-	this.easing.in = settingsFields.easing.in.val();
-	this.easing.out = settingsFields.easing.out.val();
+	this.animation = settingsFields.animation.val();
+	this.easing = settingsFields.easing.val();
 	this.css = settingsFields.css.getValue();
 
-	nodecg.variables.settings = this;
+	settingsReplicant.value = this;
 
 	ncg_f_startLoop();
 };
 
-nodecg.declareSyncedVar({
-	name: 'settings',
-	setter: function(s) {
+var settingsReplicant = nodecg.Replicant('settings')
+	.on('change', function(oldVal, s) {
 		settings.set(s);
 		settings.update();
+	});
+
+$('.nodecg-follow .panel-heading').append('<button class="btn btn-info btn-xs ncg-f_panel-btn" data-toggle="modal" data-target="#ncg-f_settingsModal" title="Followers Settings"><i class="fa fa-cog"></i></button>');
+
+/**
+ * Files
+ */
+var imageFile,
+	audioFile;
+
+$(document).on('change', '#ncg-f_backgroundImageFileLocation', function (e) {
+	imageFile = e.target.files;
+});
+
+$(document).on('change', '#ncg-f_notificationSoundFileLocation', function (e) {
+	audioFile = e.target.files;
+});
+
+$(document).on('click', '#ncg-f_uploadFileBackground', function (e) {
+	e.preventDefault();
+
+	if (imageFile) {
+		var data = new FormData();
+
+		$.each(imageFile, function(key, value) {
+			data.append(key, value);
+		});
+
+		$.ajax({
+			url: '/nodecg-follow/upload',
+			type: 'POST',
+			data: data,
+			cache: false,
+			dataType: 'json',
+			processData: false,
+			contentType: false,
+			success: function(data, textStatus, jqXHR) {
+				if (typeof data.error === 'undefined') {
+					var filename = data.data;
+					$('#ncg-f_fileUploadImage').addClass('hidden');
+					$('#ncg-t_fileUploadedImage').removeClass('hidden').find('input').val(filename);
+				} else {
+					console.log('[nodecg-transition] Errors!', data);
+				}
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+				console.log('[nodecg-transition] Errors!', textStatus);
+			}
+		});
 	}
 });
 
-$('.nodecg-follow .panel-heading').append('<button class="btn btn-info btn-xs ncg-f_panel-btn" data-toggle="modal" data-target="#ncg-f_settingsModal" title="Followers Settings"><i class="fa fa-cog"></i></button>');
+$(document).on('click', '#ncg-f_uploadFileAudio', function (e) {
+	e.preventDefault();
+
+	if (audioFile) {
+		var data = new FormData();
+
+		$.each(audioFile, function(key, value) {
+			data.append(key, value);
+		});
+
+		$.ajax({
+			url: '/nodecg-follow/upload',
+			type: 'POST',
+			data: data,
+			cache: false,
+			dataType: 'json',
+			processData: false,
+			contentType: false,
+			success: function(data, textStatus, jqXHR) {
+				if (typeof data.error === 'undefined') {
+					var filename = data.data;
+					$('#ncg-f_fileUploadAudio').addClass('hidden');
+					$('#ncg-f_fileUploadedAudio').removeClass('hidden').find('input').val(filename);
+				} else {
+					console.log('[nodecg-transition] Errors!', data);
+				}
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+				console.log('[nodecg-transition] Errors!', textStatus);
+			}
+		});
+	}
+});
+
+$(document).on('click', '#ncg-f_removeFileBackground', function (e) {
+	e.preventDefault();
+
+	if (confirm('Are you sure? (Can\'t be undone.)')) {
+		var filename = $('#ncg-t_backgroundImageFileLocationSet').val() || settings.backgroundImage;
+		nodecg.sendMessage('deleteImage', filename, function(err) {
+			if (err) {
+				console.error(err);
+			} else {
+				$('#ncg-f_backgroundImage .ncg-t_fileUpload').removeClass('hidden').find('input').val();
+				$('#ncg-f_backgroundImage .ncg-t_fileUploaded').addClass('hidden').find('input').val();
+			}
+		});
+	}
+});
+
+$(document).on('click', '#ncg-f_removeFileAudio', function (e) {
+	e.preventDefault();
+
+	if (confirm('Are you sure? (Can\'t be undone.)')) {
+		var filename = $('#ncg-t_notificationSoundFileLocationSet').val() || settings.backgroundImage;
+		nodecg.sendMessage('deleteAudio', filename, function(err) {
+			if (err) {
+				console.error(err);
+			} else {
+				$('#ncg-f_notificationSound .ncg-t_fileUpload').removeClass('hidden').find('input').val();
+				$('#ncg-f_notificationSound .ncg-t_fileUploaded').addClass('hidden').find('input').val();
+			}
+		});
+	}
+});
 
 /**
  * Followers
