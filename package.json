@@ -1,6 +1,6 @@
 {
   "name": "nodecg-follow",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Twitch Follow notifier",
   "repository": {
     "type": "git",
@@ -10,7 +10,6 @@
   "license": "GPL",
   "dependencies": {
     "connect-busboy": "^0.0.2",
-    "fs.extra": "^1.3.2",
-    "font-manager": "0.1.0"
+    "fs.extra": "^1.3.2"
   }
 }
